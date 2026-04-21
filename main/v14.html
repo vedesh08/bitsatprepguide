@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITSAT HUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030712;
+            --surface: rgba(17, 24, 39, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #6366f1;
+            --special: #f43f5e;
+            --practice: #10b981;
+            --mock: #f59e0b;
+            --lr-eng: #06b6d4;
+            --text: #f9fafb;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            /* Modern ambient background */
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(244, 63, 94, 0.1) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* Hero Section - Balanced & Professional */
+        .hero {
+            position: relative;
+            height: 320px;
+            border-radius: 32px;
+            margin-bottom: 48px;
+            background: linear-gradient(rgba(3, 7, 18, 0.5), rgba(3, 7, 18, 0.8)), url('image/cover.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border);
+            text-align: center;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Navigation Cards - The Dashboard Look */
+        .home-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .nav-card {
+            background: var(--surface);
+            backdrop-filter: blur(16px);
+            padding: 48px 32px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(31, 41, 55, 0.8);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.6);
+        }
+
+        .nav-card h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .indicator {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        /* Detailed Page View */
+        .page { display: none; animation: fadeIn 0.5s ease; }
+        .page.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .back-nav {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .back-nav:hover { color: var(--text); }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .page-title::before {
+            content: '';
+            width: 8px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        .sub-section-head {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin: 48px 0 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sub-section-head span { flex: 1; height: 1px; background: var(--border); }
+
+        /* Resource Grid & Cards */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .resource-card:hover {
+            background: rgba(31, 41, 55, 0.9);
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .resource-card b { font-size: 1.1rem; display: block; margin-bottom: 8px; font-weight: 700; }
+        .resource-card span { color: var(--text-muted); font-size: 0.85rem; line-height: 1.4; }
+
+        .label {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Transistor Box */
+        .trans-box {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .trans-link {
+            flex: 1;
+            padding: 16px;
+            background: #1e1b4b;
+            text-align: center;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        .trans-link:hover { background: var(--accent); }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="home" class="page active">
+        <div class="hero">
+            <h1>BITSAT HUB</h1>
+            <p>Premium Resources for Pilani, Goa & Hyderabad</p>
+        </div>
+
+        <div class="home-grid">
+            <div class="nav-card" onclick="nav('special-page')">
+                <div class="indicator" style="background: var(--special); box-shadow: 0 0 10px var(--special);"></div>
+                <h2 style="color: var(--special)">BITSAT Special</h2>
+                <p>Advanced theory and chapters that are excluded from JEE Main syllabus.</p>
+            </div>
+            <div class="nav-card" onclick="nav('practice-page')">
+                <div class="indicator" style="background: var(--practice); box-shadow: 0 0 10px var(--practice);"></div>
+                <h2 style="color: var(--practice)">Practice & PYQs</h2>
+                <p>Complete PCM archives, English proficiency, and Logical Reasoning sets.</p>
+            </div>
+            <div class="nav-card" onclick="nav('mocks-page')">
+                <div class="indicator" style="background: var(--mock); box-shadow: 0 0 10px var(--mock);"></div>
+                <h2 style="color: var(--mock)">Mock Portal</h2>
+                <p>Simulated CBT environments and PDF question banks for final testing.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="special-page" class="page">
+        <div class="back-nav" onclick="nav('home')">← EXIT TO DASHBOARD</div>
+        <h2 class="page-title" style="color: var(--special)">Theory & Special Chapters</h2>
+
+        <div class="sub-section-head" style="color: var(--phy)">Physics Special <span></span></div>
+        <div class="resource-grid">
+            <a href="https://youtube.com/playlist?list=PLjvx7xqdpePKWv06iJ0AfFDU1rDvTyvUR" class="resource-card" target="_blank">
+                <div class="label">Playlist</div><b>Instruments</b><span>Full practical physics module</span>
+            </a>
+            <a href="https://youtu.be/obWhDPCyz18" class="resource-card" target="_blank"><b>Damped Oscillations</b><span>Theory lecture</span></a>
+            <a href="https://youtu.be/8NgMqK9X79Y" class="resource-card" target="_blank"><b>Communication Systems</b><span>Complete chapter</span></a>
+            <a href="https://youtu.be/3WEK1rWZTqg" class="resource-card" target="_blank"><b>Cyclotron</b><span>Modern physics concepts</span></a>
+            <a href="image/colour_coding.png" class="resource-card" target="_blank"><b>Colour Coding</b><span>Reference Image</span></a>
+            <a href="https://youtu.be/bCG-e3HYzIY" class="resource-card" target="_blank"><b>Carnot Engine</b><span>Thermodynamics</span></a>
+            <a href="https://youtu.be/9-BxOaamnwg" class="resource-card" target="_blank"><b>Doppler's Effect (Sound)</b><span>Wave motion</span></a>
+            <a href="https://youtu.be/IBvMHSu934Y" class="resource-card" target="_blank"><b>Doppler in Light</b><span>Wave optics</span></a>
+            <a href="https://youtu.be/HttahmeNCfM" class="resource-card" target="_blank"><b>Newton's Law of Cooling</b><span>Heat Transfer</span></a>
+            <a href="https://youtu.be/bTHPOTLdagM" class="resource-card" target="_blank"><b>Potentiometer</b><span>Current Electricity</span></a>
+            <a href="https://youtu.be/63cwdYXNIYE" class="resource-card" target="_blank"><b>Magnetic Materials</b><span>Properties</span></a>
+            <a href="https://youtu.be/VDWqVahGixc" class="resource-card" target="_blank"><b>Nuclear Physics</b><span>Modern Physics</span></a>
+            <div class="trans-box">
+                <a href="https://youtu.be/C8bkp1OzVDI" class="trans-link" target="_blank">Transistor P1</a>
+                <a href="https://youtu.be/40crFebfUCc" class="trans-link" target="_blank">Transistor P2</a>
+                <a href="https://youtu.be/40crFebfUCc" class="trans-link" target="_blank">Transistor P3</a>
+            </div>
+        </div>
+
+        <div class="sub-section-head" style="color: var(--chem)">Chemistry Special <span></span></div>
+        <div class="resource-grid">
+            <a href="https://www.canvasclasses.in/bitsat-chemistry-revision" class="resource-card" target="_blank" style="grid-column: 1/-1;">
+                <div class="label">Portal</div><b>Chemistry Revision Portal</b><span>Canvas Classes Full Archives</span>
+            </a>
+        </div>
+
+        <div class="sub-section-head" style="color: var(--math)">Mathematics Special <span></span></div>
+        <div class="resource-grid">
+            <a href="https://www.youtube.com/live/6IGUchGmkbs" class="resource-card" target="_blank"><b>Linear Programming</b><span>Complete One Shot</span></a>
+            <a href="https://www.youtube.com/live/zbxVS7Y5NZc" class="resource-card" target="_blank"><b>Mathematical Reasoning</b><span>Sure-Shot Marks</span></a>
+        </div>
+    </div>
+
+    <div id="practice-page" class="page">
+        <div class="back-nav" onclick="nav('home')">← EXIT TO DASHBOARD</div>
+        <h2 class="page-title" style="color: var(--practice)">Practice & PYQs</h2>
+
+        <div class="sub-section-head" style="color: var(--lr-eng)">English & Logical Reasoning <span></span></div>
+        <div class="resource-grid">
+            <a href="https://questions.examside.com/past-years/year-wise/defence/nda/nda-general-ability-14th-september-2025" class="resource-card" target="_blank">
+                <div class="label">NDA PYQ</div><b>English (No Login)</b><span>Recommended level for BITSAT</span>
+            </a>
+            <a href="https://web.getmarks.app/cpyqbV3/exam/61961abda5a5260118868012/6892f37b974982c98ca8f1d8/6892f894bbd2e4a5bbba6792/pyqs?type=all" class="resource-card" target="_blank">
+                <div class="label">Login</div><b>NDA English Set</b><span>Comprehensive GetMarks set</span>
+            </a>
+            <a href="https://www.resonance.ac.in/answer-key-solutions/STSE/2019/Solutions/Class-XII-MAT.pdf" class="resource-card" target="_blank">
+                <div class="label">PDF</div><b>Resonance LR Solutions</b><span>MAT Class XII solutions</span>
+            </a>
+            <a href="https://www.ambitionbox.com/topics/logical-reasoning/questions-and-answers/number-series" class="resource-card" target="_blank"><b>LR Number Series</b><span>Topic-wise AmbitionBox</span></a>
+            <a href="https://mail.studiestoday.com/multiple-choice-questions/16472/logical-reasoning.html#topic-0" class="resource-card" target="_blank"><b>LR Question Set</b><span>StudiesToday MCQs</span></a>
+        </div>
+
+        <div class="sub-section-head" style="color: var(--practice)">PCM Playlists & PYQs <span></span></div>
+        <div class="resource-grid">
+            <a href="https://youtube.com/playlist?list=PLnG6YW15b0oRP3cktAAg_PXH2d9PN5bJk" class="resource-card" target="_blank" style="grid-column: 1/-1; border-left: 4px solid var(--practice)">
+                <div class="label">Goated</div><b>Vora Classes Top Questions</b><span>Most important problem solving series</span>
+            </a>
+            <a href="https://youtube.com/playlist?list=PLQYi_DdDxXQWMKe8Jxhy8M68tq7xW4_dF" class="resource-card" target="_blank" style="grid-column: 1/-1; border-left: 4px solid var(--accent)">
+                <div class="label">Sri Chaitanya</div><b>Top 500 Question Playlist</b><span>Complete PYQ and practice set</span>
+            </a>
+            <a href="https://web.getmarks.app/cpyqbV3/exam/61a8a124e8ce0dc8a5c62d2c" class="resource-card" target="_blank"><b>GetMarks PCM PYQs</b><span>Chapter-wise Archives</span></a>
+            <a href="https://questions.examside.com/past-years/year-wise/jee/bitsat" class="resource-card" target="_blank"><b>Examside Year-wise</b><span>Full Paper Archives</span></a>
+            <a href="https://questions.examside.com/past-years/jee/bitsat" class="resource-card" target="_blank"><b>Examside Chapter-wise</b><span>Subject Wise Practice</span></a>
+        </div>
+    </div>
+
+    <div id="mocks-page" class="page">
+        <div class="back-nav" onclick="nav('home')">← EXIT TO DASHBOARD</div>
+        <h2 class="page-title" style="color: var(--mock)">Mock Test Portal</h2>
+
+        <div class="resource-grid">
+            <a href="https://drive.google.com/drive/folders/1Uk6Gc23KLdQb1J1tgC3qdH-QZ2CedA7p?usp=sharing" class="resource-card" target="_blank">
+                <div class="label">Drive</div><b>PDF Mocks Collection</b><span>Papers with solutions</span>
+            </a>
+            <a href="https://www.mockers.in/online/bitsat-2025" class="resource-card" target="_blank">
+                <div class="label">CBT</div><b>Mockers.in Simulator</b><span>Live exam environment</span>
+            </a>
+            <a href="https://bitsat-quiz.jee-adv.eu.org/" class="resource-card" target="_blank">
+                <div class="label">Quiz</div><b>Chapter-wise Simulation</b><span>Specific topic focus</span>
+            </a>
+            <a href="https://karle.vercel.app/" class="resource-card" target="_blank">
+                <div class="label">Web</div><b>Quick CBT Simulator</b><span>Karle Vercel Portal</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function nav(id) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

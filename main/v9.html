@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITSAT Ultimate Hub</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f1f5f9;
+            --accent: #6366f1;
+            --border: #334155;
+            --special: #f43f5e;
+            --practice: #10b981;
+            --mock: #f59e0b;
+            --phy: #ef4444;
+            --chem: #10b981;
+            --math: #3b82f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .home-header {
+            position: relative;
+            height: 300px;
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: flex-end;
+            background: url('image/cover.jpg') center/cover;
+        }
+
+        .header-overlay {
+            width: 100%;
+            padding: 40px;
+            background: linear-gradient(to top, var(--bg), transparent);
+        }
+
+        .header-overlay h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 800;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .nav-item {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 700;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .nav-item:hover {
+            transform: translateY(-5px);
+            background: #2d3a4f;
+        }
+
+        .main-section {
+            padding-top: 60px;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 6px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .sub-heading {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .card:hover {
+            background: #2d3a4f;
+            transform: scale(1.02);
+            border-color: var(--accent);
+        }
+
+        .card span {
+            display: block;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .card small {
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            background: #00000040;
+            border-radius: 4px;
+            font-weight: 800;
+        }
+
+        .transistor-grid {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .t-link {
+            flex: 1;
+            background: #312e81;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .t-link:hover { background: var(--math); }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="home-header">
+        <div class="header-overlay">
+            <h1>BITSAT 2026</h1>
+            <p>Targeting Pilani, Goa & Hyderabad</p>
+        </div>
+    </div>
+
+    <div class="nav-grid">
+        <a href="#special" class="nav-item" style="border-bottom: 4px solid var(--special);">BITSAT Special Topics</a>
+        <a href="#practice" class="nav-item" style="border-bottom: 4px solid var(--practice);">Complete Practice</a>
+        <a href="#mocks" class="nav-item" style="border-bottom: 4px solid var(--mock);">Mock Test Portal</a>
+    </div>
+
+    <section id="special" class="main-section">
+        <div class="section-title" style="border-color: var(--special);">BITSAT Special (Theory)</div>
+        
+        <div class="sub-heading" style="color: var(--phy);">● Physics (Not in JEE Main)</div>
+        <div class="link-grid">
+            <a href="https://youtube.com/playlist?list=PLjvx7xqdpePKWv06iJ0AfFDU1rDvTyvUR" class="card" target="_blank"><span>Instruments</span><small>Full Playlist</small></a>
+            <a href="https://youtu.be/obWhDPCyz18" class="card" target="_blank"><span>Damped Oscillations</span><small>Theory Video</small></a>
+            <a href="https://youtu.be/8NgMqK9X79Y" class="card" target="_blank"><span>Communication Systems</span><small>Full Chapter</small></a>
+            <a href="https://youtu.be/3WEK1rWZTqg" class="card" target="_blank"><span>Cyclotron</span><small>Detailed Concept</small></a>
+            <a href="image/colour_coding.png" class="card" target="_blank"><span>Resistor Colour Coding</span><small>View Image</small></a>
+            <a href="https://youtu.be/bCG-e3HYzIY" class="card" target="_blank"><span>Carnot Engine</span><small>Thermodynamics</small></a>
+            <a href="https://youtu.be/9-BxOaamnwg" class="card" target="_blank"><span>Doppler's Effect (Sound)</span><small>Waves</small></a>
+            <a href="https://youtu.be/IBvMHSu934Y" class="card" target="_blank"><span>Doppler in Light</span><small>Optics</small></a>
+            <a href="https://youtu.be/HttahmeNCfM" class="card" target="_blank"><span>Newton's Law of Cooling</span><small>Heat Transfer</small></a>
+            <a href="https://youtu.be/bTHPOTLdagM" class="card" target="_blank"><span>Potentiometer</span><small>Current Electricity</small></a>
+            <a href="https://youtu.be/63cwdYXNIYE" class="card" target="_blank"><span>Magnetic Materials</span><small>Properties</small></a>
+            <a href="https://youtu.be/VDWqVahGixc" class="card" target="_blank"><span>Nuclear Physics</span><small>Modern Physics</small></a>
+            <div class="transistor-grid">
+                <a href="https://youtu.be/C8bkp1OzVDI" class="t-link" target="_blank">Transistors P1</a>
+                <a href="https://youtu.be/40crFebfUCc" class="t-link" target="_blank">Transistors P2</a>
+                <a href="https://youtu.be/40crFebfUCc" class="t-link" target="_blank">Transistors P3</a>
+            </div>
+        </div>
+
+        <div class="sub-heading" style="color: var(--chem);">● Chemistry & Mathematics</div>
+        <div class="link-grid">
+            <a href="https://www.canvasclasses.in/bitsat-chemistry-revision" class="card" target="_blank"><span>Chemistry Revision Portal</span><small>Canvas Classes Full Resources</small></a>
+            <a href="https://www.youtube.com/live/6IGUchGmkbs" class="card" target="_blank"><span>Linear Programming</span><small>Math Special</small></a>
+            <a href="https://www.youtube.com/live/zbxVS7Y5NZc" class="card" target="_blank"><span>Mathematical Reasoning</span><small>Math Special</small></a>
+        </div>
+    </section>
+
+    <section id="practice" class="main-section">
+        <div class="section-title" style="border-color: var(--practice);">Complete Practice & PYQs</div>
+        <div class="link-grid">
+            <a href="https://youtube.com/playlist?list=PLnG6YW15b0oRP3cktAAg_PXH2d9PN5bJk" class="card" target="_blank" style="grid-column: 1 / -1; background: linear-gradient(90deg, #1e293b, #064e3b);">
+                <div class="tag">VORA CLASSES</div>
+                <span>Top Questions For BITSAT</span>
+                <small>High yield problem solving playlist</small>
+            </a>
+            <a href="https://youtube.com/playlist?list=PLQYi_DdDxXQWMKe8Jxhy8M68tq7xW4_dF" class="card" target="_blank" style="grid-column: 1 / -1; background: linear-gradient(90deg, #1e293b, #1e1b4b);">
+                <div class="tag">SRI CHAITANYA</div>
+                <span>Top 500 Questions Playlist</span>
+                <small>Comprehensive PYQ & Problem solving</small>
+            </a>
+            <a href="https://web.getmarks.app/cpyqbV3/exam/61a8a124e8ce0dc8a5c62d2c" class="card" target="_blank"><span>GetMarks PYQs</span><small>Login Required | Chapterwise</small></a>
+            <a href="https://questions.examside.com/past-years/year-wise/jee/bitsat" class="card" target="_blank"><span>Examside Paper-wise</span><small>No Login | Year-wise</small></a>
+            <a href="https://questions.examside.com/past-years/jee/bitsat" class="card" target="_blank"><span>Examside Chapter-wise</span><small>No Login | Chapter-wise</small></a>
+        </div>
+    </section>
+
+    <section id="mocks" class="main-section">
+        <div class="section-title" style="border-color: var(--mock);">Mock Test Portal</div>
+        <div class="link-grid">
+            <a href="https://drive.google.com/drive/folders/1Uk6Gc23KLdQb1J1tgC3qdH-QZ2CedA7p?usp=sharing" class="card" target="_blank">
+                <div class="tag">DRIVE</div><span>PDF Mocks Folder</span><small>Offline papers and solutions</small>
+            </a>
+            <a href="https://www.mockers.in/online/bitsat-2025" class="card" target="_blank">
+                <div class="tag">LIVE</div><span>Free CBT Mocks 1</span><small>Full length interface</small>
+            </a>
+            <a href="https://bitsat-quiz.jee-adv.eu.org/" class="card" target="_blank">
+                <div class="tag">CHAPTER</div><span>Free CBT Mocks 2</span><small>Topic-wise testing</small>
+            </a>
+            <a href="https://karle.vercel.app/" class="card" target="_blank">
+                <div class="tag">WEB</div><span>CBT Mocks 3</span><small>Karle Vercel Portal</small>
+            </a>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
