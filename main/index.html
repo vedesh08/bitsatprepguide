@@ -31,7 +31,6 @@
             color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
-            /* Modern ambient background */
             background-image: 
                 radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 100% 100%, rgba(244, 63, 94, 0.1) 0%, transparent 50%);
@@ -43,7 +42,7 @@
             padding: 40px 24px;
         }
 
-        /* Hero Section - Balanced & Professional */
+        /* Hero Section */
         .hero {
             position: relative;
             height: 320px;
@@ -72,7 +71,7 @@
             font-weight: 500;
         }
 
-        /* Navigation Cards - The Dashboard Look */
+        /* Navigation Cards */
         .home-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -213,15 +212,17 @@
             letter-spacing: 0.5px;
         }
 
-        /* Transistor Box */
+        /* Transistor & Magnetism Box */
         .trans-box {
             grid-column: 1 / -1;
             display: flex;
             gap: 12px;
             margin-top: 8px;
+            flex-wrap: wrap;
         }
         .trans-link {
             flex: 1;
+            min-width: 150px;
             padding: 16px;
             background: #1e1b4b;
             text-align: center;
@@ -242,7 +243,7 @@
     <div id="home" class="page active">
         <div class="hero">
             <h1>BITSAT HUB</h1>
-            <p>Premium Resources for Pilani, Goa & Hyderabad</p>
+            <p>Targeted Preparation for Pilani, Goa & Hyderabad</p>
         </div>
 
         <div class="home-grid">
@@ -282,12 +283,20 @@
             <a href="https://youtu.be/IBvMHSu934Y" class="resource-card" target="_blank"><b>Doppler in Light</b><span>Wave optics</span></a>
             <a href="https://youtu.be/HttahmeNCfM" class="resource-card" target="_blank"><b>Newton's Law of Cooling</b><span>Heat Transfer</span></a>
             <a href="https://youtu.be/bTHPOTLdagM" class="resource-card" target="_blank"><b>Potentiometer</b><span>Current Electricity</span></a>
-            <a href="https://youtu.be/63cwdYXNIYE" class="resource-card" target="_blank"><b>Magnetic Materials</b><span>Properties</span></a>
-            <a href="https://youtu.be/VDWqVahGixc" class="resource-card" target="_blank"><b>Nuclear Physics</b><span>Modern Physics</span></a>
+            <a href="https://youtu.be/63cwdYXNIYE" class="resource-card" target="_blank"><b>Magnetic Materials</b><span>Properties Overview</span></a>
+            <a href="https://youtu.be/VDWqVahGixc" class="resource-card" target="_blank"><b>Nuclear Physics</b><span>Modern Physics Summary</span></a>
+            
+            <div class="sub-section-head" style="grid-column: 1/-1; margin-top: 20px;">Magnetism Masterclass <span></span></div>
             <div class="trans-box">
-                <a href="https://youtu.be/C8bkp1OzVDI" class="trans-link" target="_blank">Transistor P1</a>
-                <a href="https://youtu.be/40crFebfUCc" class="trans-link" target="_blank">Transistor P2</a>
-                <a href="https://youtu.be/40crFebfUCc" class="trans-link" target="_blank">Transistor P3</a>
+                <a href="https://youtu.be/a4CT5uVwAK4" class="trans-link" target="_blank">Earth's Magnetism</a>
+                <a href="https://youtu.be/ACgJLT5kvh4" class="trans-link" target="_blank">Angle of Dip</a>
+            </div>
+
+            <div class="sub-section-head" style="grid-column: 1/-1; margin-top: 20px;">Transistor Masterclass Series <span></span></div>
+            <div class="trans-box">
+                <a href="https://youtu.be/C8bkp1OzVDI" class="trans-link" target="_blank">Transistor Part 1</a>
+                <a href="https://youtu.be/40crFebfUCc" class="trans-link" target="_blank">Transistor Part 2</a>
+                <a href="https://youtu.be/40crFebfUCc" class="trans-link" target="_blank">Transistor Part 3</a>
             </div>
         </div>
 
